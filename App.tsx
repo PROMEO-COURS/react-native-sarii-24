@@ -6,90 +6,100 @@
  */
 
 import React from 'react';
-import type {PropsWithChildren} from 'react';
 import {
   SafeAreaView,
   ScrollView,
   StatusBar,
   StyleSheet,
   Text,
-  useColorScheme,
+  TextInput,
   View,
 } from 'react-native';
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-
-type SectionProps = PropsWithChildren<{
-  title: string;
-}>;
-
-function Section({children, title}: SectionProps): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-  return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
-    </View>
-  );
-}
-
 function App(): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
+    <SafeAreaView>
+      <StatusBar />
+      <ScrollView>
+        <View style={styles.view}>
+          <Text style={styles.title}>
+            Recherche de ville par code postal
+          </Text>
+          <Text style={styles.postalCode}>Code postal</Text>
+          <TextInput 
+            style={styles.input}
+            placeholder='60200'
+          ></TextInput>
+          <View style={styles.cityCard}>
+            <Text style={styles.cityName}>Compiègne</Text>
+            <Text>
+              <Text style={styles.cityInfo}>
+                Population:
+              </Text>
+               23584</Text>
+            <Text><Text style={styles.cityInfo}>Région:</Text> Haut-de-France</Text>
+            <Text><Text style={styles.cityInfo}>Département:</Text> Oise</Text>
+          </View>
+          <View style={styles.cityCard}>
+            <Text style={styles.cityName}>Compiègne</Text>
+            <Text>
+              <Text style={styles.cityInfo}>
+                Population:
+              </Text>
+               23584</Text>
+            <Text><Text style={styles.cityInfo}>Région:</Text> Haut-de-France</Text>
+            <Text><Text style={styles.cityInfo}>Département:</Text> Oise</Text>
+          </View>
+          <View style={styles.cityCard}>
+            <Text style={styles.cityName}>Compiègne</Text>
+            <Text>
+              <Text style={styles.cityInfo}>
+                Population:
+              </Text>
+               23584</Text>
+            <Text><Text style={styles.cityInfo}>Région:</Text> Haut-de-France</Text>
+            <Text><Text style={styles.cityInfo}>Département:</Text> Oise</Text>
+          </View>
+          <View style={styles.cityCard}>
+            <Text style={styles.cityName}>Compiègne</Text>
+            <Text>
+              <Text style={styles.cityInfo}>
+                Population:
+              </Text>
+               23584</Text>
+            <Text><Text style={styles.cityInfo}>Région:</Text> Haut-de-France</Text>
+            <Text><Text style={styles.cityInfo}>Département:</Text> Oise</Text>
+          </View>
+          <View style={styles.cityCard}>
+            <Text style={styles.cityName}>Compiègne</Text>
+            <Text>
+              <Text style={styles.cityInfo}>
+                Population:
+              </Text>
+               23584</Text>
+            <Text><Text style={styles.cityInfo}>Région:</Text> Haut-de-France</Text>
+            <Text><Text style={styles.cityInfo}>Département:</Text> Oise</Text>
+          </View>
+          <View style={styles.cityCard}>
+            <Text style={styles.cityName}>Compiègne</Text>
+            <Text>
+              <Text style={styles.cityInfo}>
+                Population:
+              </Text>
+               23584</Text>
+            <Text><Text style={styles.cityInfo}>Région:</Text> Haut-de-France</Text>
+            <Text><Text style={styles.cityInfo}>Département:</Text> Oise</Text>
+          </View>
+          <View style={styles.cityCard}>
+            <Text style={styles.cityName}>Compiègne</Text>
+            <Text>
+              <Text style={styles.cityInfo}>
+                Population:
+              </Text>
+               23584</Text>
+            <Text><Text style={styles.cityInfo}>Région:</Text> Haut-de-France</Text>
+            <Text><Text style={styles.cityInfo}>Département:</Text> Oise</Text>
+          </View>
         </View>
       </ScrollView>
     </SafeAreaView>
@@ -97,22 +107,41 @@ function App(): React.JSX.Element {
 }
 
 const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
+  view: {
+    padding: 20,
+    backgroundColor: 'white'
   },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
+  title: {
+    fontSize: 30,
+    fontWeight: 'bold',
+    textAlign: 'left',
+    marginBottom: 20
   },
-  sectionDescription: {
-    marginTop: 8,
+  postalCode: {
+    fontSize: 20
+  },
+  input: {
+    borderWidth: 1,
+    borderRadius: 10,
+    paddingLeft: 10,
     fontSize: 18,
-    fontWeight: '400',
+    marginBottom: 30
   },
-  highlight: {
-    fontWeight: '700',
+  cityCard: {
+    borderWidth: 1,
+    borderRadius: 10,
+    padding: 10,
+    backgroundColor: '#f3f6f4',
+    marginBottom: 10
   },
+  cityName: {
+    fontSize: 25,
+    fontWeight: 'bold'
+  },
+  cityInfo: {
+    fontSize: 18,
+    fontWeight: 'bold'
+  }
 });
 
 export default App;
